@@ -43,8 +43,11 @@ const createTweetElement = function(tweet) {
   <br>
   <article class="tweet">
   <header class="tweet-header">
-  <img class="tweet-avatar" src="https://i.imgur.com/73hZDYK.png">
-  <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nisl in .</h3>
+  <img class="tweet-avatar" src="${tweet.user.avatars}">
+  <span class="tweet-username" src="${tweet.user.name}">
+  <h3>
+  ${tweet.content.text};
+  </h3>
   <p>10 days ago</p>
   </header>
    </article>
