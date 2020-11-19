@@ -9,7 +9,7 @@
   
   #tweet-text {
     resize: none;
-    width: 800px;
+    width: 100%;
     background: none;
     border: none;
     border-bottom: solid 5px black;
@@ -18,19 +18,20 @@
   
   #button-counter {
     display: flex;
-    font-size: 30px;
-    justify-content: flex-end;
-    color: black;
+    justify-content: space-between;
   }
   
-  #tweet-button {
-    display: flex;
-    justify-content: flex-start;
+  #button-counter button {
     background-color: #4056A1;
     font-family: Bungee;
-    color:rgb(12, 1, 1);
   }
+
   
   .counter {
+      display: inline;
     font-family: Bungee;
+  }
+
+  .red-font {
+    color: red;
   }
