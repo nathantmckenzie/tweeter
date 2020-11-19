@@ -1,5 +1,3 @@
-$(document).ready (() => {
-
 // Fake data taken from initial-tweets.json
 const data = [
     {
@@ -33,7 +31,7 @@ const renderTweets = function(tweets) {
   let result = {};
   for (let tweet in tweets) {
       result = createTweetElement(tweet);
-      $('.container').append(result);
+      $('#tweets-container').append(result);
   }
   return result; 
 }
@@ -56,6 +54,18 @@ const createTweetElement = function(tweet) {
   return $tweet;
 }
 
+const tweetSubmit = function() {
+    $('.tweet-submission').on('submit', function(event) {
+    const text = $(this).serialize();
+    event.preventDefault();
+    })
+}
+
+
+
 renderTweets(data);
+
+
+$(document).ready (() => {
 
 });
