@@ -30,10 +30,23 @@ const createTweetElement = function(tweet) {
 }
 
 const tweetSubmit = function() {
-    $('.tweet-submission').on('submit', function(event) {
+    $('.tweet-submission').on('submit', function (event) {
     const text = $(this).serialize();
     event.preventDefault();
     })
+    if ($('#tweet-text').val() === '') {
+        alert("Missing Input");
+    } else if ($('#tweet-text').val().length > 140) {
+        alert("Character Limit Exceeded");
+    } else {
+       $.ajax({
+           type: "POST",
+           url: "/tweets",
+           data: text
+       }).then(function (data) {
+        $('.tweet-submission').trigger('reset')
+       })
+    }
 }
 
 const loadTweets = function() {
@@ -47,8 +60,6 @@ const loadTweets = function() {
 
 }
 
-
-renderTweets(data);
 
 
 $(document).ready (() => {
