@@ -1,12 +1,18 @@
 $(document).ready(function() {
-//const { data } = require("jquery");
 
 const $form = $('.tweet-submission');
 const $textArea = $('#tweet-text');
 const $tweetsContainer = $('#tweets-container');
 
+const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
 
 const createTweetElement = function(tweet) {
+  const safeHTML = `${escape(tweet.content.text)}`;
   let tweetOutput = $(`
   <section id="tweet-container">
   <br>
@@ -17,7 +23,7 @@ const createTweetElement = function(tweet) {
   <span class="tweet-handle" src="${tweet.user.handle}">
   </header>
   <h3>
-  ${tweet.content.text};
+  ${safeHTML};
   </h3>
   <p>10 days ago</p>
   </header>
@@ -33,7 +39,6 @@ const renderTweets = function(tweets) {
     // takes return value and appends it to the tweets container
     //let result = {};
     for (let tweet of tweets) {
-        //result = createTweetElement(tweet);
         $tweetsContainer.prepend(createTweetElement(tweet));
     }
   }
@@ -49,7 +54,6 @@ const loadTweets = function() {
 }
 
 $form.on('submit', function (event) {
-    //const text = $(this).serialize();
     event.preventDefault();
     if ($textArea.val() === '') {
         alert("Missing Input");
@@ -61,9 +65,9 @@ $form.on('submit', function (event) {
        .then(() => {
         $form.trigger('reset');
         loadTweets();
-       // console.log("Sucess: ", data);
-       //}).catch(function (data) {
-       //  console.log("Error: ", data);
+        console.log("Sucess: ", data);
+       }).catch(function (data) {
+         console.log("Error: ", data);
        });
     }
     })
