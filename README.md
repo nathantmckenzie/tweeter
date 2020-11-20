@@ -15,3 +15,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Final Product
+!["Desktop View"](https://github.com/nathantmckenzie/tweeter/blob/master/docs/desktop-view.png)
+!["Mobile View"](https://github.com/nathantmckenzie/tweeter/blob/master/docs/mobile-view.png)
+!["Tweets"](https://github.com/nathantmckenzie/tweeter/blob/master/docs/tweets.png)
