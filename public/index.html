@@ -41,15 +41,15 @@
     </nav>
     <header>
       <img class="avatar" src="/images/profile-hex.png"> 
-      <h2>Your Name</h2>
+      <h2>Nathan McKenzie</h2>
     
   </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section id="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form class="tweet-submission" action="/tweets/" method="POST">
-          <textarea name="text" placeholder="what are you humming about?" id="tweet-text"></textarea>
+        <h4>What are you humming about?</h4>
+        <form class="tweet-submission">
+          <textarea name="text" id="tweet-text"></textarea>
           <div id="button-counter">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" id="counterNumber" for="tweet-text">140</output> 
@@ -58,7 +58,7 @@
       </section>
       <br>
       <section id="tweets-container">
-        </section>
+      </section>
     </main>
   </body>
 
