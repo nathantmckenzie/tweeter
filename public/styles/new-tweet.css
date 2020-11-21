@@ -1,37 +1,41 @@
 #new-tweet {
-    align-content: center;
-    margin: 0, auto;
-  }
+  align-content: center;
+  margin: 0, auto;
+}
 
-  h2 {
-    color: black;
-  }
-  
-  #tweet-text {
-    resize: none;
-    width: 100%;
-    background: none;
-    border: none;
-    border-bottom: solid 5px black;
-    font-family: "Source Sans Pro", sans-serif;
-  }
-  
-  #button-counter {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  #button-counter button {
-    background-color: #4056A1;
-    font-family: Bungee;
-  }
+h2, h4 {
+  color: black;
+}
 
-  
-  .counter {
-      display: inline;
-    font-family: Bungee;
-  }
+#tweet-text {
+  resize: none;
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: solid 5px black;
+  font-family: "Source Sans Pro", sans-serif;
+}
 
-  .red-font {
-    color: red;
-  }
+#button-counter {
+  display: flex;
+  justify-content: space-between;
+  color: black;
+}
+
+#button-counter button {
+  background-color: #4056A1;
+  font-family: Bungee;
+  color: #FFFF;
+}
+
+.counter {
+  display: inline;
+  font-family: Bungee;
+}
+.red-font {
+  color: red;
+}
+#error-short, #error-long {
+  display: none;
+  color: #D8000C;
+}

@@ -1,0 +1,64 @@
+article.tweet {
+  display: block;
+  border: solid 5px black;
+  color: black;
+  margin-top: 1em;
+}
+ 
+
+article.tweet header {
+  padding: 1em;
+  margin-top: 1em;
+  height: 3em;
+  margin-bottom: 3em;
+  background-color: #f4f1ec;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  font-family: Source Sans Pro, sans-serif;
+}
+
+article.tweet footer {
+  margin: 0 1.5em;
+  border-top: solid 5px black;
+  padding: 2.5em 0.3em 0.6em 1em;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweet-username {
+  flex-grow: 1;
+}
+.tweet-handle {
+  display: flex;
+  flex-direction: flex-end;
+}
+
+img.tweet-avatar {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 1em;
+  padding-top: 1em;
+  margin-right: 0.5em;
+}
+
+.tweet-icons {
+  color: black;
+  height: 2em;
+  width: 28em;
+  display: flex;
+  justify-content: flex-end;
+}
+
+article.tweet h3 {
+  padding-left: 1.8em;
+  padding-bottom: 1em;
+  color:black;
+}
+
+.tweet-date {
+  display: flex;
+  margin-top: 0em;
+  margin-right: -4em;
+}

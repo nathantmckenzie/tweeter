@@ -1,0 +1,28 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+  width: 100%;
+  background-color: orange;
+  padding: 1.5em;
+  position: fixed;
+  top: 0;
+}
+
+.logo {
+  font-family: Bungee, sans-serif;
+  color: #FFFF;
+}
+
+.new-tweet {
+  font-family: Source Sans Pro, sans-serif;
+  color: #FFFF;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 1024px) {
+  nav {
+    background-color:#4056A1;
+  }
+}
