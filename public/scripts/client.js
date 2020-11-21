@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+// DATA
 const $errorShort = $('#error-short');
 const $errorLong = $('#error-long');
 const $form = $('.tweet-submission');
@@ -7,19 +8,25 @@ const $textArea = $('#tweet-text');
 const $tweetsContainer = $('#tweets-container');
 const $newTweet = $('.new-tweet');
 const $counter = $('.counter');
+
+// FUNCTIONS
+
+//Brings the user to the textbox area
 const newTweet = function() {
   $newTweet.on('click', function() {
     $textArea.focus();
   })
-}
-
+};
 newTweet();
+
+//Prevents cross-site scripting
 const escape = function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
+//Creates the HTML template of a tweet
 const createTweetElement = function(tweet) {
   const safeHTML = `${escape(tweet.content.text)}`;
   let $tweetOutput = $(`
@@ -41,7 +48,7 @@ const createTweetElement = function(tweet) {
   </article> 
   `);
   return $tweetOutput;
-}
+};
 
 const renderTweets = function(tweets) {
   // loops through tweets
@@ -50,7 +57,7 @@ const renderTweets = function(tweets) {
   for (let tweet of tweets) {
     $tweetsContainer.prepend(createTweetElement(tweet));
   }
-}
+};
 
 const loadTweets = function() {
   $.ajax({
@@ -61,9 +68,11 @@ const loadTweets = function() {
       renderTweets(tweets)
     }
   })
-}
+};
 loadTweets();
 
+
+//deals with a tweet submission - AJAX is used to prevent the page from reloading
 $form.on('submit', function(event) {
   event.preventDefault();
   $errorShort.slideUp(1000);
